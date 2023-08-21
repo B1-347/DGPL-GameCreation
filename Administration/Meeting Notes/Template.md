@@ -4,7 +4,7 @@ Type: In-person Meeting / Online Meeting
 
 Location: ON CAMPUS / DISCORD
 
-Time: 10:30 / 7:00 / 6:00
+Time: 10:30 / 6:00
 
 Participants:
 - Bi Wan Low
