@@ -173,10 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e95191d3202cf47bf0775bf5442a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container:
-  - {fileID: 266648557}
-  - {fileID: 450936580}
-  - {fileID: 2020580127}
 --- !u!1 &73648866
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +595,7 @@ GameObject:
   - component: {fileID: 352024160}
   - component: {fileID: 352024159}
   - component: {fileID: 352024158}
+  - component: {fileID: 352024162}
   m_Layer: 0
   m_Name: Kettle
   m_TagString: Untagged
@@ -692,6 +689,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &352024162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352024157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0be0025a69775340adb78e2e2d544a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  id: 
+  duration: 10
+  container: []
+  _active: 0
+  _on:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 352024159}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: b7f53333fce91a2428fc26f11fea6e9e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _off:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 352024159}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 9315bd65ed458b749a05b26bb9351fab, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &450936575
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,6 +1012,50 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &588088219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 588088221}
+  - component: {fileID: 588088220}
+  m_Layer: 0
+  m_Name: TimeKeeper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &588088220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588088219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d98b477dc3fd9da4b8c28e113d8e7d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &588088221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588088219}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 865.3872, y: 447.66995, z: -304.30127}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,8 +1716,9 @@ GameObject:
   - component: {fileID: 1419325558}
   - component: {fileID: 1419325557}
   - component: {fileID: 1419325556}
+  - component: {fileID: 1419325560}
   m_Layer: 5
-  m_Name: HUD
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1721,6 +1810,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1419325560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419325555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05039088d52c947439688bda851d2d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeText: {fileID: 1473509108}
 --- !u!1 &1473509106
 GameObject:
   m_ObjectHideFlags: 0

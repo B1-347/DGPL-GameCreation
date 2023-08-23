@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "New Default Object", menuName = "Inventory System/Items/Default")]
-
 public class DefaultItem : Interactable
 {
     [SerializeField] private bool _active;   //If device is on

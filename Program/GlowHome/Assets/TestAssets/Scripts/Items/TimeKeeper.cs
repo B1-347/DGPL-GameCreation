@@ -13,7 +13,7 @@ public class TimeKeeper : MonoBehaviour
     public static string meridiem { get; private set; }
     public static string time { get; private set; }
 
-    private float _minuteToRealTime = 0.1f;
+    private float _minuteToRealTime = 0.5f;
     private float _timer;
 
     void Start()
