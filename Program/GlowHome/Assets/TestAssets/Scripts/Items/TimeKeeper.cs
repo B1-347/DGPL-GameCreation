@@ -10,8 +10,8 @@ public class TimeKeeper : MonoBehaviour
 
     public static int minute { get; private set; }
     public static int hour { get; private set; }
-    public static string meridiem { get; private set; }
-    public static string time { get; private set; }
+    public static string meridiem { get; private set; } //AM or PM change
+    public static string time { get; private set; } //Time displayed in UI
 
     private float _minuteToRealTime = 0.5f;
     private float _timer;
