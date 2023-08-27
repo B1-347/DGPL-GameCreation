@@ -5,15 +5,10 @@ using UnityEngine.Events;
 
 public class DefaultItem : Interactable
 {
-    [SerializeField] private bool _active;   //If device is on
-    [SerializeField] private UnityEvent _on; //What to do if on
-    [SerializeField] private UnityEvent _off;//What to do if off
-
-    public void Awake()
+    public override void Awake()
     {
         type = itemType.DEFAULT;
-        duration = 0;
-        _active = false;
+        Reset();
     }
 
     public override void Activate()
@@ -28,5 +23,16 @@ public class DefaultItem : Interactable
             _active = false;
             _off.Invoke();
         }
+    }
+    public override void Check()
+    {
+        //Count how long it has been on
+        if(_active)_timeTaken++;
+    }
+    public override void Reset()
+    {
+        _active = false;
+        _timeTaken = 0;
+        duration = 0;
     }
 }
