@@ -21,6 +21,7 @@ public abstract class Interactable : MonoBehaviour
     [SerializeField] protected UnityEvent _on; //Called if item is on
     [SerializeField] protected UnityEvent _off;//Called if item is off
 
+    public bool isOn() { return _active; }
     public abstract void Awake(); //Auto set variables for each
     public abstract void Activate(); //The function called when user clicks on game object
     public abstract void Reset(); //Object set back to base state
@@ -47,5 +48,5 @@ public abstract class Interactable : MonoBehaviour
             }
         }
     }
-    public bool isOn() { return _active; }
+    
 }
