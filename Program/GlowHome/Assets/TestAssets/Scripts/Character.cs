@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Character : MonoBehaviour
 {
     public string name;
     public GameObject room;
     public List<string> eventTimes;
+    public List<GameObject> eventlocations;
 
     private bool _isMoving;
-    private int _pathIndex;
-    private int _eventIndex;
-    private GameObject _wayPoints;
+    private NavMeshAgent _agent;
+    private Vector3 _destination;
  
     private void OnEnable()
     {
@@ -25,27 +26,20 @@ public class Character : MonoBehaviour
     public void Awake()
     {
         name = "master";
-        _eventIndex = 0;
-        _pathIndex = 1;
         _isMoving = false;
     }
 
     public void Start()
     {
-        _wayPoints = room.transform.GetChild(room.transform.childCount - 1).gameObject;
-        transform.position = _wayPoints.transform.GetChild(0).position;
+        _agent = GetComponent<NavMeshAgent>();
     }
-
+    
     public void Check()
     {
-        if (TimeKeeper.time == eventTimes[_eventIndex])
+        if ( eventTimes.Contains(TimeKeeper.time))
         {
-            _eventIndex++;
             _isMoving = true;
-            if (_eventIndex > eventTimes.Count -1 )
-            {
-                _eventIndex = 0;
-            }
+            _destination = eventlocations[eventTimes.IndexOf(TimeKeeper.time)].transform.position;
         }
     }
 
@@ -53,15 +47,16 @@ public class Character : MonoBehaviour
     {
         if (_isMoving)
         {
-            Vector3 destination = _wayPoints.transform.GetChild(_pathIndex).transform.position;
-            Vector3 newPos = Vector3.MoveTowards(transform.position, destination, 2 * Time.deltaTime);
-            transform.position = newPos;
+            transform.rotation = Quaternion.RotateTowards(
+                transform.rotation,
+                Quaternion.LookRotation(_destination),
+                Time.deltaTime * 100);
 
-            float distance = Vector3.Distance(transform.position, destination);
-            if (distance <= 0.5)
-            {
-                _isMoving = false;
-            }
+            //transform.LookAt(new Vector3 (_destination.x,_agent.transform.position.y,_destination.z));
+                       
+            //_agent.destination = _destination;
+            
+            
         }
     }
 }
