@@ -47,16 +47,44 @@ public class Character : MonoBehaviour
     {
         if (_isMoving)
         {
-            transform.rotation = Quaternion.RotateTowards(
-                transform.rotation,
-                Quaternion.LookRotation(_destination),
-                Time.deltaTime * 100);
+            //find the vector pointing from our position to the target
+		    Vector3 _direction = (new Vector3 (_destination.x,_agent.transform.position.y,_destination.z) - transform.position).normalized;
 
-            //transform.LookAt(new Vector3 (_destination.x,_agent.transform.position.y,_destination.z));
-                       
-            //_agent.destination = _destination;
-            
-            
+		    //create the rotation we need to be in to look at the target
+		    Quaternion _lookRotation = Quaternion.LookRotation(_direction);
+
+		    //rotate us over time according to speed until we are in the required rotation
+		    transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * 3);
+
+            Vector3 Islooking = (_destination - _agent.transform.position).normalized;
+            float dotProd = Vector3.Dot(Islooking, _agent.transform.forward);
+            if(dotProd > 0.9) {
+                _agent.destination = _destination;
+            }
         }
     }
+}
+
+public class SlerpToLookAt: MonoBehaviour
+{
+	//values that will be set in the Inspector
+	public Transform Target;
+	public float RotationSpeed;
+
+	//values for internal use
+	private Quaternion _lookRotation;
+	private Vector3 _direction;
+	
+	// Update is called once per frame
+	void Update()
+	{
+		//find the vector pointing from our position to the target
+		_direction = (Target.position - transform.position).normalized;
+
+		//create the rotation we need to be in to look at the target
+		_lookRotation = Quaternion.LookRotation(_direction);
+
+		//rotate us over time according to speed until we are in the required rotation
+		transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
+	}
 }
