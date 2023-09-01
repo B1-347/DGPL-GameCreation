@@ -35,4 +35,9 @@ public class DefaultItem : Interactable
         _timeTaken = 0;
         duration = 0;
     }
+    public override int State()
+    {
+        if(_active == true) return 1;
+        return 0;
+    }
 }

@@ -43,11 +43,16 @@ public class BarItem : Interactable
 
         _percentage = ((float)_minuteCount/duration)*100;
         _barDisplay = _percentage.ToString("0");
+
     }
     public override void Reset()
     {
         _active = false;
         _timeTaken = 0;
         _minuteCount = 0;
+    }
+    public override int State()
+    {
+        return (int)_percentage;
     }
 }

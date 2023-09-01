@@ -55,4 +55,9 @@ public class SegmentItem : Interactable
         _minuteCount = 0;
         
     }
+    public override int State()
+    {
+        return _state;
+    }
+
 }

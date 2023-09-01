@@ -26,6 +26,7 @@ public abstract class Interactable : MonoBehaviour
     public abstract void Activate(); //The function called when user clicks on game object
     public abstract void Reset(); //Object set back to base state
     public abstract void Check(); //Called every minute of the clock
+    public abstract int State();
     private void OnEnable()
     {
         TimeKeeper.onMinuteChanged += Check;
