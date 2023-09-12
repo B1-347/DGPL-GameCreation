@@ -48,6 +48,11 @@ public class Character : MonoBehaviour
         }
     }
 
+    private void Looking()
+    {
+
+    }
+
     private void Update()
     {
         //find the vector pointing from our position to the target
@@ -63,20 +68,22 @@ public class Character : MonoBehaviour
         Vector3 Islooking = (_destination - _agent.transform.position).normalized;
         float dotProd = Vector3.Dot(Islooking, _agent.transform.forward);
         
-        if(dotProd > 0.9 && _destinationOBJ.GetComponents<Component>().Length > 1 && Vector3.Distance(transform.position, _destination) < 2)
-        {
-            //if(_destinationOBJ.State() == (int)expectations[0])_satisfaction++;
-        }
+        // if(dotProd > 0.9 && _destinationOBJ.GetComponents<Component>().Length > 1 && Vector3.Distance(transform.position, _destination) < 2)
+        // {
+            // if(_destinationOBJ.GetType() == typeof())
+            // if(_destinationOBJ.State() == (int)expectations[0])_satisfaction++;
+            // print(_satisfaction);
+        // }
 
         if (_isMoving)
         {
             if(dotProd > 0.9){
                 _agent.destination = _destination;
             }
-            if(Vector3.Distance(transform.position, _destination) < 1 )
+            if(Vector3.Distance(transform.position, _destination) < 1)
             {
                 _isMoving = false;
-                print("STOP");
+                print("TEST STOP");               
             }
         }
     }
