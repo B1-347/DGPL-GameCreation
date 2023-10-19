@@ -2474,10 +2474,10 @@ PrefabInstance:
     - target: {fileID: 2240407010466543184, guid: fe8d07a170db01b40b5ee6d9ac000ce1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1d491bb56e72d084cac58e1c5156816a, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2240407010466543184, guid: fe8d07a170db01b40b5ee6d9ac000ce1, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4051679339004181827, guid: fe8d07a170db01b40b5ee6d9ac000ce1, type: 3}
       propertyPath: m_Size.x
@@ -2490,10 +2490,10 @@ PrefabInstance:
     - target: {fileID: 4051679339004181827, guid: fe8d07a170db01b40b5ee6d9ac000ce1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 730a27de00accae4da61ad1396ee8df5, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4051679339004181827, guid: fe8d07a170db01b40b5ee6d9ac000ce1, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5069273094213051316, guid: fe8d07a170db01b40b5ee6d9ac000ce1, type: 3}
       propertyPath: m_RootOrder
@@ -2554,10 +2554,10 @@ PrefabInstance:
     - target: {fileID: 9188279855028170017, guid: fe8d07a170db01b40b5ee6d9ac000ce1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bb0f6e0a6ce04234781b799897a8d192, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 9188279855028170017, guid: fe8d07a170db01b40b5ee6d9ac000ce1, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

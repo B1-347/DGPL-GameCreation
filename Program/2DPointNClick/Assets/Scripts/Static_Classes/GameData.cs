@@ -19,6 +19,7 @@ public static class GameData
         open = true;
         menu = true;
         resources = new int[,] { { 1, 5 }, { 1, 5 }, { 1, 5 } };
+        satisfaction = new int[,] { { 1, 1 }, { 1, 1 }, { 0, 1 } };
         unlocks = new Dictionary<string, int>();
         unlocks.Add("B_table", 0);
         unlocks.Add("SW_table", -1);
@@ -32,6 +33,7 @@ public static class GameData
     {
         //TODO: Save file
         resources = new int[,] { { 1, 0 }, { 1, 0 }, { 0, 0 } };
+        satisfaction = new int[,] { { 1, 1 }, { 1, 1 }, { 0, 1 } };
     }
 
 }

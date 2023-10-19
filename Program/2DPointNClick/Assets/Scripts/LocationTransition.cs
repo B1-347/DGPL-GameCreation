@@ -14,6 +14,9 @@ public class LocationTransition : MonoBehaviour
     public GameObject animatedObject;
     public float transitionTime;
 
+    private float _beatToReal = 10f;
+    private float _timer;
+
     private void Awake()
     {
         animatedObject.SetActive(true);
@@ -46,5 +49,34 @@ public class LocationTransition : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(scene);
+    }
+
+    /// <summary>
+    /// Resource tick up.
+    /// </summary>
+    public void Update()
+    {
+        if (GameData.menu == false)
+        {
+            _timer -= Time.deltaTime;
+
+            if (_timer <= 0)
+            {
+                for (int index = 0; index < GameData.resources.Length/2; index++)
+                {
+                    int num = 1 * GameData.satisfaction[index, 1];
+                    if (GameData.resources[index, 1] + num <= 999 && GameData.resources[index, 0] == 1)
+                    {
+                        GameData.resources[index, 1] += num;
+                    }
+                    else if (GameData.resources[index, 1] + num > 999 && GameData.resources[index, 0] == 1)
+                    {
+                        GameData.resources[index, 1] = 999;
+                    }
+                }
+
+                _timer = _beatToReal;
+            }
+        }
     }
 }

@@ -10,9 +10,6 @@ public class Character : MonoBehaviour
     public GameObject resources;
     public GameObject workstation;
     public GameObject imageBoundary;
-    
-    //private float _minuteToRealTime = 0.5f;
-    private float _timer;
 
     public enum states { 
         MOVING,
@@ -26,7 +23,16 @@ public class Character : MonoBehaviour
     }
     public void Awake()
     {
-        
+        //Code used to edit character satisfaction
+        switch (character)
+        {
+            case "Bee":
+                GameData.satisfaction[1, 1] += 1;
+                break;
+            case "Silk":
+                GameData.satisfaction[2, 1] += 1;
+                break;
+        }
     }
     public void Update()
     {

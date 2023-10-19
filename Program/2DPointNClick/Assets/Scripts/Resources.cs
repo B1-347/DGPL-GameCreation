@@ -23,23 +23,6 @@ public class Resources : MonoBehaviour
     }
 
     /// <summary>
-    /// Increments resources based on resource name.
-    /// </summary>
-    public void AddResource(string resource, int num)
-    {
-        int index = this.gameObject.transform.Find(resource).GetSiblingIndex();
-
-        if (GameData.resources[index, 1] + num <= 999 && GameData.resources[index, 0] == 1)
-        {
-            GameData.resources[index, 1] += num;
-        }
-        else if (GameData.resources[index, 1] + num > 999 && GameData.resources[index, 0] == 1)
-        {
-            GameData.resources[index, 1] = 999;
-        }
-    }
-
-    /// <summary>
     /// Pulls resources based on order and number in array.
     /// </summary>
     public void Cost(int[] resources) 
@@ -90,5 +73,10 @@ public class Resources : MonoBehaviour
                 resource.Find("Count").GetComponent<TMP_Text>().text = GameData.resources[resource.GetSiblingIndex(), 1].ToString();
             }            
         }
+    }
+
+    public void Update()
+    {
+        UpdateResources();
     }
 }
