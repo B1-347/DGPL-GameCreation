@@ -1,0 +1,28 @@
+Resource Generation Relationship
+(Assume 1 per second for sake of understanding as a base rate)
+
+Wood: Standard Rate 1/second
+Might increase over time with upgrades. (Eg. each upgrade adds 0.1/second OR 10% increase)
+
+Honey: Lower Standard Rate 0.5/second
+Rate increases with each upgrade (eg. +0.2/second OR 20% increase)
+Having the flowers in the field/farm would increase rate by 50%
+
+Silk: Lowest Standard Rate 0.25/second
+Rate increased with each updrade (e.g. +0.1/second OR 10% increase (depending on the rate we're after, or see below)
+Having mulberry in the field/farm would increase rate by 50%
+
+
+Alternatively, each rate for upgrades is standardised, and the only thing that changes is the base standard rate (and would work on a percentage model)
+In this case:
+Wood: 1/second (increases by 10% each upgrade (regardless of where it is made)
+Honey: 0.5/second (increases by 20% each upgrade in the Beehive)
+Silk: 0.25/second (increases by 20% each upgrade in the Silkworm Den) (the 10% from above would be if we wanted the increase to be slower (and if using integers))
+
+Both the Honey and Silk increase by 50% when a plot in the farm/field is filled with their chosen plant, so the Honey production could be doubled if both plots were filled with flowers (50% + 50%)
+
+I imagine the increases would be additive rather than compunded(?) (We add percentages rather than using a percentage on the numbers that have already got a percentage applied) (Eg. 100 + 50% (of 100) = 150, then if another percentage was applied, it would be taken from the base (100 + 50% + 10% = 100 + 50 + 10 = 160). I hope this is understandable. However if the opposite is easier, then that's fine too.
+
+Instead it could be entirely integer based, where the value is increased by set numbers, but I felt a percentage might be easier to work with.
+
+As for any interactions between the characters, I'm not sure how applicable this is, especially if it changes based on where the character appears each time you load it, so I feel we can at least start with this.
