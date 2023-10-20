@@ -29,6 +29,11 @@ public class LocationTransition : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
+        if (this.GetComponent<AudioSource>() != null) 
+        {
+            this.GetComponent<AudioSource>().Play();
+        }
+        
         Load(nextlocation, animatedObject.GetComponentInChildren<Animator>(), transitionTime);
     }
     /// <summary>
