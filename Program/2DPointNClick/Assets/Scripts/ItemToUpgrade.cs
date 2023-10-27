@@ -32,6 +32,7 @@ public class ItemToUpgrade : MonoBehaviour
                     resource.Cost(cost);
                     child.gameObject.SetActive(false);
                     upgrade.gameObject.SetActive(true);
+
                 }
                 else 
                 {
